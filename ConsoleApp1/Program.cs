@@ -1,4 +1,4 @@
-﻿Console.Write("Vvdi a = ");
+Console.Write("Vvdi a = ");
 double a = Convert.ToDouble(Console.ReadLine());
 Console.Write("Vvdi b = ");
 double b = Convert.ToDouble(Console.ReadLine());
@@ -33,6 +33,10 @@ else if (a + b + c < d + e + f)
     {
         //если 4 легче, значит 5 монета фальшивая
         Console.WriteLine("Фальшивая монета - 5");
+    }
+    else
+    {
+        Console.WriteLine("Фальшивая монета - 4");
     }
 }
 
