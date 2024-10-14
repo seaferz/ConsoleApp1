@@ -8,6 +8,67 @@ class Program
 {
     static void Main()
     {
+        // Вводим веса каждой монеты (0 - настоящая, >0 - тяжелее, <0 - легче)
+        int coin1 = 0, coin2 = 0, coin3 = 0, coin4 = 0, coin5 = 0, coin6 = 1; // Предположим, что монета 6 - фальшивая
+
+        // Первое взвешивание: сравниваем 1 и 2 с 3 и 4
+        if (coin1 + coin2 == coin3 + coin4)
+        {
+            // Если равновесие, фальшивая монета среди 5 и 6
+            if (coin5 == coin6)
+            {
+                Console.WriteLine("Все монеты настоящие!");
+            }
+            else if (coin5 > coin6)
+            {
+                Console.WriteLine("Фальшивая монета: 5 (тяжелее)");
+            }
+            else
+            {
+                Console.WriteLine("Фальшивая монета: 6 (легче)");
+            }
+        }
+        else
+        {
+            // Если неравновесие, фальшивая монета среди 1, 2, 3, 4
+            if (coin1 == coin2)
+            {
+                // Если 1 и 2 равны, фальшивая среди 3 и 4
+                if (coin3 > coin4)
+                {
+                    Console.WriteLine("Фальшивая монета: 3 (тяжелее)");
+                }
+                else
+                {
+                    Console.WriteLine("Фальшивая монета: 4 (легче)");
+                }
+            }
+            else
+            {
+                // Если 1 и 2 не равны, фальшивая среди них
+                if (coin1 > coin2)
+                {
+                    Console.WriteLine("Фальшивая монета: 1 (тяжелее)");
+                }
+                else
+                {
+                    Console.WriteLine("Фальшивая монета: 2 (легче)");
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
         int[] coins = { 0, 0, 0, 0, 0, 1 }; // 0 - настоящая монета, 1 - фальшивая (может быть легче или тяжелее)
         FindFakeCoin(coins);
     }
